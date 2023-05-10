@@ -18,11 +18,25 @@ type DeletedAuthor {
 type DeletedBook {
   books: [Book!]
 }
+type Items {
+  book: [Book!]
+  author: [Author!]
+}
+type InputType {
+  types: Item
+}
+enum Item {
+  Author
+  Book
+}
 type Mutation {
-  addAuthor(name: String!): Author!
-  addBook(title: String!, authorId: ID!): Book!
-  updateBook(id: ID!, title: String!, authorId: ID): Book!
-  updateAuthor(id: ID!, name: String!): Author!
-  deleteAuthor(id: ID!): DeletedAuthor!
-  deleteBook(id: ID!): DeletedBook!
+  addItem(type: String!, name: String, title: String, authorId: String): [Items]
+  updateItems(
+    type: String!
+    id: ID!
+    name: String
+    title: String
+    authorId: String
+  ): [Book!]
+  deleteItems(type: String!, id: ID!): [Items!]
 }

@@ -12,7 +12,7 @@ const books = [
 function findById(array, id) {
   return array.findIndex((item) => item.id === id);
 }
-// generic function to conditionally check id
+// generic Error handling
 function indexCheck(type, id) {
   if (type === -1) {
     throw new Error(`Item at id:${id} does not exist`);

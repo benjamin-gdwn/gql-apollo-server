@@ -8,7 +8,7 @@ const {
 // using the built in file system api
 const { readFileSync } = require("fs");
 // importing the resolvers file
-const resolvers = require("./resolvers");
+const resolvers = require("./resolver2");
 // importing the type definitions
 const typeDefs = readFileSync("./schema.graphql", "utf-8");
 // creating a server with the type definitions,
